@@ -88,11 +88,35 @@
 					</execution>
 				</executions>
 				<configuration>
-					<schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
-					<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+					<sources>
+						<source>${project.basedir}/src/main/resources/xsd</source>
+					</sources>
+					<packageName>com.example.springloansoap.ws</packageName>
+					<outputDirectory>${project.build.directory}/generated-sources/jaxb</outputDirectory>
 					<clearOutputDir>false</clearOutputDir>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>3.3.0</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${project.build.directory}/generated-sources/jaxb</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
 
 		</plugins>
 	</build>
