@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsd="http://www.w3.org/1999/XSL/Transform" xmlns:xsd="http://www.w3.org/1999/XSL/Transform"
+        targetNamespace="http://www.bci.com/srping/soap/api/loaneligibility"
+        xmlns:tns="http://www.bci.com/srping/soap/api/loaneligibility"
+        elementFormDefault="qualified">
+</schema>
+
+<xsd:element name="CustomerRequest">
+<xsd:complexType>
+    <xsd:sequence>
+        <xsd:element name="customerName" type="xsd:string"/>
+        <xsd:element name="age"type
+    </xsd:sequence>
+</xsd:complexType>
+</xsd:element>
