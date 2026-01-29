@@ -9,7 +9,7 @@ import com.example.springloansoap.ws.Acknowledgement;
 import java.util.List;
 
 @Service
-public class loanEligibilityService {
+public class LoanEligibilityService {
 
     public Acknowledgement checkLoanEligibility(CustomerRequest request) {
         Acknowledgement acknowledgement=new Acknowledgement();
@@ -28,6 +28,10 @@ public class loanEligibilityService {
 if (mismatchCriteriaList.size() > 0){
     acknowledgement.setApprovedAmount(0);
     acknowledgement.setIsEligible(false);
+}else{
+    acknowledgement.setApprovedAmount(500000);
+    acknowledgement.setIsEligible(true);
+    mismatchCriteriaList.clear();
 }
 
 return acknowledgement;
